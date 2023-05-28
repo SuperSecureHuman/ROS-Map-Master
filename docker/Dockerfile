@@ -24,4 +24,4 @@ RUN apt install ros-humble-slam-toolbox -y
 WORKDIR /root/ros_docker/ros_ws/
 
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-RUN echo "source /root/ros_docker/ros_ws/install/setup.bash" >> ~/.bashrc
+#RUN echo "source /root/ros_docker/ros_ws/install/setup.bash" >> ~/.bashrc
