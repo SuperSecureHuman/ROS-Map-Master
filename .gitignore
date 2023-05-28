@@ -3,4 +3,3 @@ install/
 log/
 vscode.sh
 __pycache__/
-ros_ws
