@@ -19,9 +19,13 @@ RUN apt install code  -y
 RUN apt install ros-humble-navigation2 -y 
 RUN apt install ros-humble-nav2-bringup -y 
 RUN apt install ros-humble-turtlebot3-gazebo -y 
+RUN apt install ros-humble-turtlebot3 -y 
 RUN apt install ros-humble-slam-toolbox -y 
 
-WORKDIR /root/ros_docker/ros_ws/
+WORKDIR /root/ros_docker
 
-RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-#RUN echo "source /root/ros_docker/ros_ws/install/setup.bash" >> ~/.bashrc
+# Append the content to the existing .bashrc file
+RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc \
+    && echo "export TURTLEBOT3_MODEL=waffle" >> /root/.bashrc \
+    && echo "export GAZEBO_MODEL_PATH=\$GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models" >> /root/.bashrc
+
