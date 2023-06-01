@@ -21,11 +21,13 @@ RUN apt install ros-humble-nav2-bringup -y
 RUN apt install ros-humble-turtlebot3-gazebo -y 
 RUN apt install ros-humble-turtlebot3 -y 
 RUN apt install ros-humble-slam-toolbox -y 
+RUN apt install ros-humble-rmw-cyclonedds-cpp
 
 WORKDIR /root/ros_docker
 
 # Append the content to the existing .bashrc file
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc \
     && echo "export TURTLEBOT3_MODEL=waffle" >> /root/.bashrc \
-    && echo "export GAZEBO_MODEL_PATH=\$GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models" >> /root/.bashrc
+    && echo "export GAZEBO_MODEL_PATH=\$GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models" >> /root/.bashrc \
+    && echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> /root/.bashrc 
 
