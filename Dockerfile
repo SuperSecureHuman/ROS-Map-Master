@@ -16,9 +16,11 @@ RUN apt install ros-humble-rmw-cyclonedds-cpp -y
 
 WORKDIR /root/ros_docker
 
+# Clone gazevbo models to speedup gazebo startup time
+RUN git clone --depth 1  --single-branch  https://github.com/osrf/gazebo_models ~/.gazebo/models
+
 # Append the content to the existing .bashrc file
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc \
     && echo "export TURTLEBOT3_MODEL=waffle" >> /root/.bashrc \
     && echo "export GAZEBO_MODEL_PATH=\$GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models" >> /root/.bashrc \
     && echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> /root/.bashrc 
-
