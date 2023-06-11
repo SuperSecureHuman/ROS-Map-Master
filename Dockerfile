@@ -14,6 +14,9 @@ RUN apt install ros-humble-turtlebot3-gazebo  ros-humble-turtlebot3  -y
 RUN apt install ros-humble-slam-toolbox -y 
 RUN apt install ros-humble-rmw-cyclonedds-cpp -y
 
+RUN add-apt-repository -y  ppa:borglab/gtsam-release-4.1
+RUN apt install libgtsam-dev libgtsam-unstable-dev -y
+
 WORKDIR /root/ros_docker
 
 # Clone gazevbo models to speedup gazebo startup time
