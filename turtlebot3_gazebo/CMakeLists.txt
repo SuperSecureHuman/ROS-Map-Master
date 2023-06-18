@@ -48,6 +48,10 @@ set(dependencies
   "tf2"
 )
 
+set(EXEC_NAME "turtlebot3_drive")
+
+add_executable(${EXEC_NAME} src/turtlebot3_drive.cpp)
+ament_target_dependencies(${EXEC_NAME} ${dependencies})
 
 ################################################################################
 # Install
@@ -60,6 +64,9 @@ install(DIRECTORY launch models rviz urdf worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 
+install(DIRECTORY include/
+  DESTINATION include/
+)
 
 ################################################################################
 # Macro for ament package
