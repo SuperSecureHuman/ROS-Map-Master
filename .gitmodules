@@ -1,3 +1,0 @@
-[submodule "ROS_Course"]
-	path = ros_ws/src
-	url = https://github.com/SuperSecureHuman/ROS_Course
