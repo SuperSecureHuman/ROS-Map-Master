@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5.0)
 project(velodyne_description)
 
 find_package(ament_cmake REQUIRED)
-find_package(gazebo REQUIRED)
+#find_package(gazebo REQUIRED)
 find_package(gazebo_ros_pkgs REQUIRED)
 
 ament_export_dependencies(gazebo_ros_pkgs)

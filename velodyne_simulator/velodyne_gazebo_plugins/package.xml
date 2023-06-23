@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>velodyne_gazebo_plugins</name>
-  <version>1.0.9</version>
+  <version>1.0.13</version>
   <description>
     Gazebo plugin to provide simulated data from Velodyne laser scanners.
   </description>
@@ -13,22 +13,14 @@
   <url type="repository">https://bitbucket.org/dataspeedinc/velodyne_simulator</url>
   <url type="bugtracker">https://bitbucket.org/dataspeedinc/velodyne_simulator/issues</url>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>tf2</depend>
-
-  <build_depend>gazebo_dev</build_depend>
-  <build_depend>gazebo_msgs</build_depend>
-  <build_depend>gazebo_ros</build_depend>
-  <build_depend>rclcpp</build_depend>
-
-  <exec_depend>gazebo_dev</exec_depend>
-  <exec_depend>gazebo_msgs</exec_depend>
-  <exec_depend>gazebo_ros</exec_depend>
-  <exec_depend>rclcpp</exec_depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf</depend>
+  <depend>gazebo_ros</depend>
 
   <export>
-    <build_type>ament_cmake</build_type>
   </export>
 
 </package>

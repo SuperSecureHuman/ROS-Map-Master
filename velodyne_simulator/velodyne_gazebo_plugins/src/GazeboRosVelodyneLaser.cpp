@@ -292,7 +292,7 @@ void GazeboRosVelodyneLaser::Load(sensors::SensorPtr _parent, sdf::ElementPtr _s
   //      ros subscribers present.
   sub_ = gazebo_node_->Subscribe(parent_sensor_->Topic(), &GazeboRosVelodyneLaser::OnScan, this);
 
-  RCLCPP_INFO(ros_node_->get_logger(), "Velodyne %slaser plugin ready");
+  RCLCPP_INFO(ros_node_->get_logger(), "Velodyne laser plugin ready");
   gzdbg << "GazeboRosVelodyneLaser LOADED\n";
 }
 

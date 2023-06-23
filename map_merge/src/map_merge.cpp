@@ -41,8 +41,7 @@
 #include <map_merge/map_merge.h>
 #include <map_merge/ros1_names.hpp>
 #include <rcpputils/asserts.hpp>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
-
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 
 namespace map_merge
 {

@@ -36,7 +36,7 @@ def generate_launch_description():
     world = os.path.join(
         get_package_share_directory('turtlebot3_gazebo'),
         'worlds',
-        'willow.world'
+        'broken_house.world'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
@@ -61,7 +61,7 @@ def generate_launch_description():
 
     spawn_turtlebot_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'spawn_turtlebot3.launch.py')
+            os.path.join(launch_file_dir, 'spawn_3d.launch.py')
         ),
         launch_arguments={
             'x_pose': x_pose,
