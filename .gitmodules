@@ -2,3 +2,6 @@
 	path = velodyne_simulator
 	url = https://github.com/SuperSecureHuman/velodyne_simulator.git
 	branch = humble-dev
+[submodule "LIO-SAM"]
+	path = LIO-SAM
+	url = https://github.com/TixiaoShan/LIO-SAM.git
