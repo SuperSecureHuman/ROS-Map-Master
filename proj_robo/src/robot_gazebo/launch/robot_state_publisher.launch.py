@@ -12,7 +12,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    urdf_file_name = 'robot.urdf'
+    urdf_file_name = '/root/ros_docker/proj_robo/src/robot_description/robot/robot.urdf'
 
     print('urdf_file_name : {}'.format(urdf_file_name))
 

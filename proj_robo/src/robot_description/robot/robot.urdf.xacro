@@ -9,6 +9,11 @@
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>  
   <xacro:include filename="$(find robot_description)/urdf/IMU/IMU.urdf.xacro"/>
 
+  <xacro:arg name="gpu" default="false"/>
+  <xacro:property name="gpu" value="$(arg gpu)" />
+  <xacro:arg name="organize_cloud" default="false"/>
+  <xacro:property name="organize_cloud" value="$(arg organize_cloud)" />
+
   <!-- =============== Link & Joint =============== -->
   <!-- Base Footprint -->
   <link name="base_footprint"/>
@@ -53,8 +58,8 @@
   </xacro:rear_wheel_v0>
 
   <!--  Velodyne -->
-  <xacro:VLP-16 parent="base_link" name="velodyne" topic="/points_raw" hz="10" samples="440">
-	<origin xyz="0 0 -0.4" rpy="0 ${M_PI} 0"/>
+  <xacro:VLP-16 parent="base_link" name="velodyne" topic="/points_raw" organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
+	<origin xyz="0 0 2" rpy="0 ${M_PI} 0"/>
   </xacro:VLP-16>    
 
   <!-- IMU -->

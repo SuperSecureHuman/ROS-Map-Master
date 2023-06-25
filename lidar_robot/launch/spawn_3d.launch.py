@@ -7,7 +7,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     # Get the urdf file
     DA_CAR_MODEL = "3d_car"
-    urdf_path = "/root/ros_docker/lidar_robot/description/robot.urdf"
+    urdf_path = "/root/ros_docker/curly-succotash/src/lidar_robot/description/robot.urdf"
 
     # Launch configuration variables specific to simulation
     x_pose = LaunchConfiguration('x_pose', default='0.0')
