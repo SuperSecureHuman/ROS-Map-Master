@@ -16,6 +16,8 @@ RUN apt install ros-humble-rmw-cyclonedds-cpp -y
 
 RUN add-apt-repository -y  ppa:borglab/gtsam-release-4.1
 RUN apt install libgtsam-dev libgtsam-unstable-dev -y
+RUN apt install ros-humble-twist-mux -y
+RUN apt install ros-humble-ros2-controllers ros-humble-ros2-control -y
 
 WORKDIR /root/ros_docker
 

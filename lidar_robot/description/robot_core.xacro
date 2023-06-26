@@ -1,32 +1,43 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:include filename="inertial_macros.xacro"/>
+    <xacro:include filename="inertial_macros.xacro" />
 
     <!-- creating a global color graphs -->
     <material name="white">
-        <color rgba="1 1 1 1"/>
+        <color rgba="1 1 1 1" />
     </material>
 
     <material name="black">
-        <color rgba="0 0 0 1"/>
+        <color rgba="0 0 0 1" />
     </material>
 
     <material name="grey">
-        <color rgba="0.5 0.5 0.5 1"/>
+        <color rgba="0.5 0.5 0.5 1" />
     </material>
 
     <material name="blue">
-        <color rgba="0.2 0.2 1 1"/>
+        <color rgba="0.2 0.2 1 1" />
     </material>
 
     <material name="orange">
-        <color rgba="1 0.3 0.1 1"/>
+        <color rgba="1 0.3 0.1 1" />
     </material>
 
 
     <!-- first link is called as base link -->
     <link name="base_link">
+    </link>
+
+    <!-- BASE_FOOTPRINT LINK -->
+
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="base_footprint" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <link name="base_footprint">
     </link>
 
     <!-- chassis (box with some dimensions) -->
