@@ -25,6 +25,10 @@ WORKDIR /root/ros_docker
 # Clone gazevbo models to speedup gazebo startup time
 RUN git clone --depth 1  --single-branch  https://github.com/osrf/gazebo_models ~/.gazebo/models
 
+RUN git clone https://github.com/SuperSecureHuman/ROS_Workspace_Private '.'
+RUN git pull --recurse-submodules
+RUN git submodule update --recursive
+
 # Append the content to the existing .bashrc file
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc \
     && echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> /root/.bashrc 
