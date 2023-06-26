@@ -1,4 +1,5 @@
-ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
+source ros_docker/install/setup.bash
+ros2 launch lidar_robot launch_sim.launch.py
 ros2 launch nav2_bringup navigation_launch.py
 ros2 launch slam_toolbox online_async_launch.py
 ros2 launch nav2_bringup rviz_launch.py
