@@ -6,3 +6,7 @@
  	path = LIO-SAM
  	url = https://github.com/TixiaoShan/LIO-SAM.git
  	branch = ros2
+ [submodule "slam_gmapping"]
+ 	path = slam_gmapping
+ 	url = https://github.com/charlielito/slam_gmapping.git
+ 	branch = feature/namespace_launch
