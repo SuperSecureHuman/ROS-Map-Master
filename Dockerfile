@@ -8,6 +8,7 @@ RUN sudo apt-get install wget gpg lsb-release gnupg apt-transport-https python3-
 RUN sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
 RUN apt update -y
+RUN apt upgrade -y
 RUN apt install ros-humble-gazebo-ros-pkgs -y
 RUN apt install ros-humble-navigation2 ros-humble-nav2-bringup -y 
 RUN apt install ros-humble-turtlebot3-gazebo  ros-humble-turtlebot3  -y 
