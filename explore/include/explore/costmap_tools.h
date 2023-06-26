@@ -94,16 +94,17 @@ bool nearestCell(unsigned int& result, unsigned int start, unsigned char val,
                  const nav2_costmap_2d::Costmap2D& costmap)
 {
   const unsigned char* map = costmap.getCharMap();
-  const unsigned int size_x = costmap.getSizeInCellsX(),
-                     size_y = costmap.getSizeInCellsY();
+  const unsigned int size_x = costmap.getSizeInCellsX();
+  const unsigned int size_y = costmap.getSizeInCellsY();
+  const unsigned int map_size = size_x * size_y;
 
-  if (start >= size_x * size_y) {
+  if (start >= map_size) {
     return false;
   }
 
   // initialize breadth first search
   std::queue<unsigned int> bfs;
-  std::vector<bool> visited_flag(size_x * size_y, false);
+  std::vector<bool> visited_flag(map_size, false);
 
   // push initial cell
   bfs.push(start);
@@ -111,25 +112,39 @@ bool nearestCell(unsigned int& result, unsigned int start, unsigned char val,
 
   // search for neighbouring cell matching value
   while (!bfs.empty()) {
-    unsigned int idx = bfs.front();
+    unsigned int current_idx = bfs.front();
     bfs.pop();
 
     // return if cell of correct value is found
-    if (map[idx] == val) {
-      result = idx;
+    if (map[current_idx] == val) {
+      result = current_idx;
       return true;
     }
 
-    // iterate over all adjacent unvisited cells
-    for (unsigned nbr : nhood8(idx, costmap)) {
-      if (!visited_flag[nbr]) {
-        bfs.push(nbr);
-        visited_flag[nbr] = true;
+    // Calculate row and column indices from current index
+    unsigned int current_row = current_idx / size_x;
+    unsigned int current_col = current_idx % size_x;
+
+    // Define the range of neighboring cells to explore
+    unsigned int min_row = (current_row > 0) ? current_row - 1 : 0;
+    unsigned int max_row = (current_row < size_y - 1) ? current_row + 1 : size_y - 1;
+    unsigned int min_col = (current_col > 0) ? current_col - 1 : 0;
+    unsigned int max_col = (current_col < size_x - 1) ? current_col + 1 : size_x - 1;
+
+    // iterate over adjacent unvisited cells
+    for (unsigned int row = min_row; row <= max_row; ++row) {
+      for (unsigned int col = min_col; col <= max_col; ++col) {
+        unsigned int neighbor_idx = row * size_x + col;
+        if (!visited_flag[neighbor_idx]) {
+          bfs.push(neighbor_idx);
+          visited_flag[neighbor_idx] = true;
+        }
       }
     }
   }
 
   return false;
 }
+
 }  // namespace frontier_exploration
 #endif
