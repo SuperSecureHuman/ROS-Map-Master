@@ -2,6 +2,7 @@
 #define FRONTIER_SEARCH_H_
 
 #include "nav2_costmap_2d/costmap_2d_ros.hpp"
+#include <memory>
 
 namespace frontier_exploration
 {
@@ -42,7 +43,7 @@ public:
    * @param position Initial position to search from
    * @return List of frontiers, if any
    */
-  std::vector<Frontier> searchFrom(geometry_msgs::msg::Point position);
+  std::vector<Frontier> searchFrom(const geometry_msgs::msg::Point position);
 
 protected:
   /**
