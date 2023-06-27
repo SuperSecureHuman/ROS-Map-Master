@@ -96,3 +96,17 @@ Then, we added the following sensors:
 * Differential drive with ROS Control
 
 The car is able to move around in the environment, and the sensors are able to provide data to the ROS system.
+
+## Issues Faced (Major ones)
+
+* [SOLVED] Velodyne kept crashing the system, and we had to use a custom fork of the simulator, modify the tf tree and gaussian kernel to be more memory effiecient. This largely solved the issue in my case, while other members had to reduce the number of rays and update frequency of the sensor.
+
+* [SOLVED] Crashes when using explore node. This was solved by modifying the BFS algorithm to be more memory efficient.
+
+* The robot moves randomly sometimes not reaching the nav goal. This is a major issue, and we are still trying to figure out the cause. If this issue is sorted, then all the uses of turtle bot can be replaced with this bot, and we can have a fully custom robot.
+
+## Possible Future Work
+
+[ ] Multi Robot Exploration - Currently entire stack crashes when trying to launch exploration with multiple bot. Need to first confirm if its a resource availablity or code optimization issue.
+
+[ ] Map Merge for 3d
