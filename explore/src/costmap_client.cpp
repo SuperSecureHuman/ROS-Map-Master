@@ -42,6 +42,8 @@
 #include <mutex>
 #include <string>
 
+#include <chrono>
+
 namespace explore
 {
 // static translation table to speed things up
@@ -89,7 +91,7 @@ Costmap2DClient::Costmap2DClient(rclcpp::Node& node, const tf2_ros::Buffer* tf)
   while (!costmap_received_) {
     rclcpp::spin_some(node_.get_node_base_interface());
     // Wait for a second
-    usleep(1000000);
+    rclcpp::sleep_for(std::chrono::microseconds(1000000)); // 1 second
   }
   // updateFullMap(costmap_msg); // this is already called in the callback of
   // the costmap_sub_

@@ -38,7 +38,6 @@
 
 #include <explore/explore.h>
 
-#include <thread>
 
 inline static bool same_point(const geometry_msgs::msg::Point& one,
                               const geometry_msgs::msg::Point& two)
