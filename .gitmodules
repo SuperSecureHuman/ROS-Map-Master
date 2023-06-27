@@ -10,3 +10,6 @@
  	path = slam_gmapping
  	url = https://github.com/charlielito/slam_gmapping.git
  	branch = feature/namespace_launch
+[submodule "turtlebot3_simulations"]
+	path = turtlebot3_simulations
+	url = https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
