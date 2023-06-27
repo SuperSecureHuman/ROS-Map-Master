@@ -73,7 +73,9 @@ https://github.com/SuperSecureHuman/ROS_Workspace_Private/assets/88489071/d16123
 
 ### 3d Reconstruction
 
-Uses [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) to reconstruct the environment in 3d. PointCloud2d data is from Velodyne 16P, with a custom fork found here - [Velodyne_Simulator](https://github.com/SuperSecureHuman/velodyne_simulator) (Branch Humble-Dev). Robot is custom-made. 
+Uses [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) to reconstruct the environment in 3d. PointCloud2d data is from Velodyne 16P, with a custom fork found here - [Velodyne_Simulator](https://github.com/SuperSecureHuman/velodyne_simulator) (Branch Humble-Dev). The robot is custom-made. 
+
+https://github.com/SuperSecureHuman/ROS_Workspace_Private/assets/88489071/5fccd372-4c06-47f3-857d-f11b15bfccc6
 
 Pre-requisites (for the current phase of the project):
 
