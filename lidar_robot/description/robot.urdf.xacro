@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
-  <xacro:include filename="$(find robot_description)/urdf/IMU/IMU.urdf.xacro" />
+  <xacro:include filename="imu.xacro" />
   
     <!-- Example link -->
     <!-- <link name="base_link"></link> -->
