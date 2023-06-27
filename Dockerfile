@@ -11,7 +11,7 @@ RUN apt update -y
 RUN apt upgrade -y
 RUN apt install ros-humble-gazebo-ros-pkgs -y
 RUN apt install ros-humble-navigation2 ros-humble-nav2-bringup -y 
-# RUN apt install ros-humble-turtlebot3-gazebo  ros-humble-turtlebot3  -y 
+RUN apt install ros-humble-turtlebot3  -y 
 RUN apt install ros-humble-slam-toolbox -y 
 RUN apt install ros-humble-rmw-cyclonedds-cpp -y
 
@@ -19,12 +19,12 @@ RUN add-apt-repository -y  ppa:borglab/gtsam-release-4.1
 RUN apt install libgtsam-dev libgtsam-unstable-dev -y
 RUN apt install ros-humble-xacro -y
 # RUN apt install ros-humble-twist-mux -y
-# RUN apt install ros-humble-ros2-controllers ros-humble-ros2-control -y
+RUN apt install ros-humble-ros2-controllers ros-humble-ros2-control -y
 
 WORKDIR /root/ros_docker
 
 # Clone gazevbo models to speedup gazebo startup time
-RUN git clone --depth 1  --single-branch  https://github.com/osrf/gazebo_models ~/.gazebo/models
+#RUN git clone --depth 1  --single-branch  https://github.com/osrf/gazebo_models ~/.gazebo/models
 
 # Append the content to the existing .bashrc file
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc \
