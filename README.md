@@ -36,13 +36,14 @@ You can send a goal to each robot using the 2D Nav Goal button in RViz. The sepa
 
 
 
-https://github.com/SuperSecureHuman/ROS_Workspace_Private/assets/88489071/894abf3c-e37d-4b9c-90d2-540451a231e2
-
-
 
 #### Issues
 
 While you can use custom robots for this, we had an issue where our robot would randomly keep moving in its own way, even after reaching the nav goal. This forced us to stick with Turtlebot for the demo.
+
+
+https://github.com/SuperSecureHuman/ROS-Map-Master/assets/88489071/e9a427b3-4237-465b-b086-f7fa7560aa27
+
 
 ### Autonomous Exploration
 
@@ -68,7 +69,7 @@ ros2 launch explore_lite explore.launch.py
 ```
 
 
-https://github.com/SuperSecureHuman/ROS_Workspace_Private/assets/88489071/d161232c-56cd-45ae-b0cc-968ba797d7b2
+https://github.com/SuperSecureHuman/ROS-Map-Master/assets/88489071/55cd3c56-19b5-486b-81ee-557c3a60b844
 
 
 ### 3d Reconstruction
@@ -94,6 +95,10 @@ ros2 launch lio_sam run.launch.py
 #### Issues
 
 There are some stray random outputs from the gazebo IMU, which we heavily suspect causes occasionally unstable mapping.
+
+
+https://github.com/SuperSecureHuman/ROS-Map-Master/assets/88489071/79bdd961-e51f-4ae4-8f8a-df98c6eebc7e
+
 
 ### The Car Model
 
