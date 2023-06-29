@@ -41,6 +41,7 @@
                 <pose>0 0 0 0 0 0</pose>
                 <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
                     <topicName>imu_raw</topicName>
+                    <remapping>~/out:=imu</remapping>
                     <update_rate>0</update_rate>
                     <bodyName>imu_link</bodyName>
                     <updateRateHZ>200.0</updateRateHZ>
