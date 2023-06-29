@@ -114,8 +114,6 @@ The car can navigate within the environment while its sensors provide data to th
 ## Possible Future Work
 
 - [ ] Multi-Robot Exploration: Currently, the entire stack crashes when attempting to launch exploration with multiple robots. To address this, we must ascertain whether it is due to resource availability or requires code optimization.
-- [ ]  3D Map Merge: Explore the possibility of implementing map merging capabilities for 3D maps.
-
-- [ ] 3D Map Merge: Explore the possibility of implementing map merging capabilities for 3D maps.
+- [ ]  3D Map Merge: Explore the possibility of implementing map merging capabilities for 3D maps.  
 
 Feel free to reach out for any questions or suggestions!
